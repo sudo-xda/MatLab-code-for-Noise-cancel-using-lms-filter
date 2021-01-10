@@ -10,16 +10,16 @@ f2 = 99/2;
 voice = cos (2*pi*f1*t);
 subplot(4,1,1);
 plot(t,voice);
-title('voice (do not have access to)')
+title('voice')
 noise=cos(2*pi*f2*t.^2);
 primary  =  voice + noise;
 subplot(4,1,2)
 plot(t,primary)
-title('primary = voice + noise (input1)')
+title('voice + noise')
 ref = noise+.25*rand;
 subplot(4,1,3)
 plot(t,ref)
-title('referance (noisy noise) (input2)')
+title('referance (noisy noise)')
  mu=0.006;
  n=length(primary);
  delayed=zeros(1,order);
@@ -38,5 +38,5 @@ end
  
  subplot(4,1,4);
  plot(t,cancelled);
- title('adaptive output (hopefully it isclose t "voice")')
+ title('adaptive output hopefully it is close t0 voice')
 
